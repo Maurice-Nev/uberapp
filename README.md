@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
+# UberApp
 
-## Getting Started
+UberApp ist eine Webanwendung, die es Schülern ermöglicht, Fahrgemeinschaften für den Schulweg zu organisieren. Sie können sich anmelden, Fahrten anbieten, suchen und verwalten, sowie an Fahrten teilnehmen oder diese verlassen.
+---
 
-First, run the development server:
+## Inhaltsverzeichnis
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. [Installation](#installation)
+2. [Verwendung](#verwendung)
+3. [Features](#features)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Voraussetzungen**
 
-## Learn More
+Um das Projekt zu installieren und zu starten, benötigst du folgende Software:
 
-To learn more about Next.js, take a look at the following resources:
+- Supabase CLI
+- Docker
+- Node.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Installationsschritte**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Klone das Repository:
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/dein-benutzername/uberapp.git
+   cd uberapp
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Installiere die Abhängigkeiten:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm i
+   # oder
+   npm i --legacy-peer-deps   # works best
+   ```
+
+3. Starte den Supabase-Dienst in Docker (dies dauert etwa 10 Minuten):
+
+   ```bash
+   supabase start
+   ```
+
+4. Lade die Nominatim-Datenbank in Docker:
+
+   ```bash
+   docker-compose -f docker-compose-nominatim.yml up nominatim
+   ```
+
+   > **Hinweis:** Überprüfe in Docker den Container mit dem Namen `nominatim`, und warte, bis in der Konsole "finished" angezeigt wird. Dies kann bis zu 2 Stunden dauern.
+
+5. Führe anschließend Migrationen durch:
+   ```bash
+   # hier Migration-Befehl einfügen, falls relevant
+   ```
+
+---
+
+## Verwendung
+
+### **Entwicklungsserver starten**
+
+1. Starte den Entwicklungsserver:
+
+   ```bash
+   npm run dev # i used this
+   # oder
+   yarn dev
+   # oder
+   pnpm dev
+   # oder
+   bun dev
+   ```
+
+2. Öffne [http://localhost:3000](http://localhost:3000) in deinem Browser, um die App zu nutzen.
+
+### **Produktionsserver starten**
+
+1. Baue das Projekt für die Produktion:
+
+   ```bash
+   npm run build # i used this
+   # oder
+   yarn build
+   # oder
+   pnpm build
+   # oder
+   bun build
+   ```
+
+2. Starte anschließend den Produktionsserver:
+   ```bash
+   npm start
+   ```
+
+---
+
+## Features
+
+- **Anmeldung und Registrierung**: Nutzer können sich anmelden oder ein Konto erstellen.
+- **Fahrten anbieten und suchen**: Schüler können Fahrten erstellen und nach vorhandenen Fahrgemeinschaften suchen.
+- **Fahrtenverwaltung**: Fahrten können bearbeitet oder gelöscht werden.
+- **Teilnahme an Fahrten**: Nutzer können sich für Fahrten anmelden oder abmelden.
+
+---

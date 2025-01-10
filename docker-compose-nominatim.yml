@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nominatim:
+    image: mediagis/nominatim:4.4
+    environment:
+      POSTGRES_PASSWORD: password
+      PBF_URL: https://download.geofabrik.de/europe/germany/nordrhein-westfalen-latest.osm.pbf
+      IMPORT_WIKITABLES: "false" # Kein Wikipedia-Import
+      OSM2PGSQL_EXTRA_ARGS: "--drop" # Entfernt temporäre Tabellen nach dem Import
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nominatimdata:/var/lib/postgresql/14/main
