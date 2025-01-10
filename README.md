@@ -1,5 +1,5 @@
 ---
-# UberApp
+# UberApp (Abschlussprojekt)
 
 UberApp ist eine Webanwendung, die es Schülern ermöglicht, Fahrgemeinschaften für den Schulweg zu organisieren. Sie können sich anmelden, Fahrten anbieten, suchen und verwalten, sowie an Fahrten teilnehmen oder diese verlassen.
 ---
