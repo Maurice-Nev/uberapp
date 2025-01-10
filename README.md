@@ -27,7 +27,7 @@ Um das Projekt zu installieren und zu starten, benötigst du folgende Software:
 1. Klone das Repository:
 
    ```bash
-   git clone https://github.com/dein-benutzername/uberapp.git
+   git clone https://github.com/Maurice-Nev/uberapp.git
    cd uberapp
    ```
 
