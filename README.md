@@ -53,10 +53,8 @@ Um das Projekt zu installieren und zu starten, benötigst du folgende Software:
 
    > **Hinweis:** Überprüfe in Docker den Container mit dem Namen `nominatim`, und warte, bis in der Konsole "finished" angezeigt wird. Dies kann bis zu 2 Stunden dauern.
 
-5. Führe anschließend Migrationen durch:
-   ```bash
-   # hier Migration-Befehl einfügen, falls relevant
-   ```
+5. Env datei bearbeiten:
+   nach dem starten der supabase datenbank, die .env.example in .env umbenennen und die schlüssel hinzufügen 
 
 ---
 
